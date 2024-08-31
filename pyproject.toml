@@ -1,0 +1,35 @@
+[project]
+name = "killerbee"
+version = "3.0.0-beta.2"
+description = "ZigBee and IEEE 802.15.4 Attack Framework and Tools"
+authors = [
+    {name = "Joshua Wright", email = "jwright@willhackforsushi.com"},
+    {name = "Ryan Speers", email = "ryan@riverloopsecurity.com"}
+]
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+keywords = ["ZigBee", "IEEE 802.15.4", "security", "tools", "attack"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+    "pyserial>=2.0",
+    "pyusb",
+    "pycryptodome",
+    "rangeparser",
+    "scapy"
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["killerbee", "zigbee_crypt", "tools"]
+namespaces = true
